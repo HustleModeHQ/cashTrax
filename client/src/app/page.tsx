@@ -122,3 +122,11 @@ export default function Home() {
     </main>
   )
 }
+
+function TopBar() {
+  return (
+    <div className='top-bar'>
+      <button></button>
+    </div>
+  )
+}
