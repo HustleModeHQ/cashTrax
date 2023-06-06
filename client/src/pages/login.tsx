@@ -16,13 +16,14 @@ function LoginBox() {
       <div style={{
         width: '300px',
         height: '400px',
-        backgroundColor: 'skyblue',
+        backgroundColor: '#0078ff',
         border: '2px solid black',
         borderRadius: '10px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        boxShadow: '10px 10px 5px 0px white',
       }}>
         <div style={{
           marginBottom: '20px',

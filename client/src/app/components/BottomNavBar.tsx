@@ -6,7 +6,7 @@ const BottomNavBar: React.FC = () => {
     <nav className="bottom-nav">
       <ul>
         <li>
-          <a href="/">Home</a>
+          <a href="/home">Home</a>
         </li>
         <li>
           <a href="/about">About</a>

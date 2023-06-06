@@ -7,14 +7,37 @@ import Contact from '../pages/contact'
 
 export default function Home() {
   return (
-    <main >
+    <main style={{height: '100vh'}}>
       <div className='center'>
         <LoginBox/>
       </div>
-      <div>
+      <div style={{height: '10%'}}>
         <BottomNavBar/>
       </div>
     </main>
   )
 }
 
+// initializeApp(config.firebaseConfig);
+
+// export interface IApplicationProps {}
+
+// const Application: React.FunctionComponent<IApplicationProps> = (props) => {
+//     return (
+//         <BrowserRouter>
+//             <Routes>
+//                 <Route
+//                     path="/"
+//                     element={
+//                         <AuthRoute>
+//                             <HomePage />
+//                         </AuthRoute>
+//                     }
+//                 />
+//                 <Route path="/login" element={<LoginPage />} />
+//             </Routes>
+//         </BrowserRouter>
+//     );
+// };
+
+// export default Application;
