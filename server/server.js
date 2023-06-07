@@ -1,11 +1,25 @@
 const express = require('express')
+const cors = require('cors');
+// import firebase from 'firebase/app';
+// import 'firebase/firestore';
 const app = express()
+app.use(cors());
+const admin = require('firebase-admin');
+
+// Initialize the Firebase Admin SDK
+const serviceAccount = require('./serviceAccountKey.json');
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'firestore.googleapis.com/projects/hustlewallet-34e56/databases/(default)'
+});
+
+const db = admin.firestore();
 
 app.get("/api", (req, res) => {
      res.json({"users": ["user1", "user2", "user3"]})
 })
 
-app.listen(5000, () => {
+app.listen(5001, () => {
     console.log("Server started on port 5000")
 })
 
@@ -82,5 +96,27 @@ app.get("/summary", (req, res) => {
 
     res.json(summarized)
 
+})
+
+app.get('/get_transactions', (req, res) => {
+    const userDocRef = db.doc('example/5YGZj7DBqhQU9JBcFWvo');
+    const accountDocRef = userDocRef.collection('accounts').doc('SqKUNrc4R3IcYHM7k4mz');
+    const transactionCollection = accountDocRef.collection('transactions');
+
+    let all_transactions = []
+    // console.log('Error getting documents1: ', userDocRef);
+
+    transactionCollection.get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                all_transactions.push(doc.data())
+                // console.log('Error getting documents2: ', doc.data());
+            })
+            res.status(200).send(JSON.stringify(all_transactions))
+        })
+        .catch((error) => {
+            console.log('Error getting documents: ', error);
+            res.status(500).send('Error getting transactions')
+        });
 })
 
