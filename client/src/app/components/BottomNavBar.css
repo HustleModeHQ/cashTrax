@@ -1,6 +1,12 @@
 .bottom-nav {
-    background-color: #333;
-    color: #fff;
+    background-color: transparent;
+    /* background-image: linear-gradient(315deg, #af8c9d 0%, #8cacac 74%); */
+    background: -webkit-linear-gradient(315deg, #af8c9d 0%, #8cacac 74%);
+    /* background: -webkit-linear-gradient(#eee, #333); */
+    background-clip: text;
+    font-style: Helvetica bold;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     padding: 20px;
     height: 100%;
     display: flex;

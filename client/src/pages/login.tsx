@@ -1,4 +1,5 @@
 import React from "react";
+import '../app/globals.css'
 
 function LoginButton() {
     const loginbuttonHandle = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,22 +15,22 @@ function LoginButton() {
 function LoginBox() {
     return (
       <div style={{
-        width: '300px',
-        height: '400px',
-        backgroundColor: '#0078ff',
-        border: '2px solid black',
-        borderRadius: '10px',
+        // width: '300px',
+        // height: '400px',
+        // backgroundColor: '#0078ff',
+        // border: '2px solid black',
+        // borderRadius: '10px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        boxShadow: '10px 10px 5px 0px white',
+        // boxShadow: '10px 10px 5px 0px white',
       }}>
         <div style={{
           marginBottom: '20px',
           alignContent: 'top'
       }}>
-          <h1>HustleWalleX</h1>
+          <h1 className="logo">HustleWalleX</h1>
         </div>  
         <LoginButton/>
       </div>

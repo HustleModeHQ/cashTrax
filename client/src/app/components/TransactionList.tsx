@@ -19,7 +19,7 @@ const TrList: React.FC = () => {
 
     const fetchData = async () => {
         try {
-            // const response = await fetch("api_end_point");
+            // const response = await fetch("http://192.168.1.6:5001/get_transactions");
             // if(!response.ok) {
             //     throw new Error('Failed to fetch Data');
             // }

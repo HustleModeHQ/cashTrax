@@ -1,6 +1,8 @@
 import TransactionList from "@/app/components/TransactionList";
 import React from "react";
 import '../app/globals.css'
+import '../app/components/FloatingButton'
+import FloatingButton from "../app/components/FloatingButton";
 
 function Home() {
     return(
@@ -11,6 +13,7 @@ function Home() {
             <div className="transactions">
                 <TransactionList/>
             </div>
+            <FloatingButton/>
         </div>
     )
 }
